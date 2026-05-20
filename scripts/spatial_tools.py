@@ -1,6 +1,5 @@
 from geopy.geocoders import Nominatim
 import time
-from tqdm import tqdm
 
 def reverse_geocode_coordinates(coordinates_list):
     """
@@ -13,18 +12,18 @@ def reverse_geocode_coordinates(coordinates_list):
     Liste mit Ländernamen
     """
     geolocator = Nominatim(user_agent="wildfire_project_dmoinqi_20260520_1", timeout=10)
+    #timeout = 10, falls der Server nicht reagiert, damit de Code nicht hängen bleibt
 
     adresses = []
 
-    for i in tqdm(coordinates_list):
-        loc = geolocator.reverse(i)
+    for i in coordinates_list:
+        loc = geolocator.reverse(i) #es wird reverse geocoding verwendet, heisst von den Koordinaten zum Ort
 
         if loc:
-            adresses.append(loc.address)
+            adresses.append(loc.address) #wenn eine Adresse gefunden wird, wird die der Liste "adresses" angehängt
         else:
-            adresses.append("Unbekannt")
+            adresses.append("Unbekannt") #wenn keine Adresse gefunden wird, wir "Unbekannt" der Liste angehängt
 
         time.sleep(1)  #Pause --> wichtig wegen API-Regeln
-
 
     return adresses
