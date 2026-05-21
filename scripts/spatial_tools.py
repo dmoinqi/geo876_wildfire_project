@@ -1,6 +1,7 @@
 from geopy.geocoders import Nominatim
 import time
 
+#Funktion von das Reverse Geocoding für eine Liste oder Panda Series
 def reverse_geocode_coordinates(coordinates_list):
     """
     Führt Reverse Geocoding für eine Liste oder pandas Series von Koordinaten durch.
@@ -27,3 +28,4 @@ def reverse_geocode_coordinates(coordinates_list):
         time.sleep(1)  #Pause --> wichtig wegen API-Regeln
 
     return adresses
+
