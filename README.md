@@ -1,1 +1,0 @@
-# geo876_wildfire_project

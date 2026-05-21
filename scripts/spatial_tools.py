@@ -6,11 +6,25 @@ def reverse_geocode_coordinates(coordinates_list):
     """
     Führt Reverse Geocoding für eine Liste oder pandas Series von Koordinaten durch.
 
-    Parameter:
-    coordinates_list : Liste oder pandas Series von Strings im Format "lat, lon"
+    Für jede Koordinate im Format "lat, lon" wird mithilfe des Nominatim-Geocoders
+    eine Adresse ermittelt. Die Funktion wird insbesondere verwendet, um die
+    räumliche Verteilung von Brandereignissen (z. B. Länderzuordnung) zu analysieren.
 
-    Rückgabe:
-    Liste mit Ländernamen
+    Parameter
+    ----------
+    coordinates_list : list oder pandas.Series
+        Liste oder Series von Strings im Format "latitude, longitude".
+
+    Returns
+    -------
+    list
+        Liste von Adressen (Strings). Falls keine Adresse gefunden wird,
+        wird "Unbekannt" zurückgegeben.
+
+    Hinweise
+    --------
+    - Es wird eine Pause von 1 Sekunde zwischen den Anfragen eingefügt,
+      um die API-Nutzungsregeln von Nominatim einzuhalten.
     """
     geolocator = Nominatim(user_agent="wildfire_project_dmoinqi_20260520_1", timeout=10)
     #timeout = 10, falls der Server nicht reagiert, damit de Code nicht hängen bleibt
