@@ -6,8 +6,8 @@ def classify_fire_intensity(frp):
         Intensitätsklassen ein. Diese Klassen werden anschliessend für die
         farbliche Darstellung der Brandereignisse in der interaktiven Karte verwendet.
 
-        Die Klassengrenzen orientieren sich an typischen Feuerintensitäten gemäss
-        ArcGIS-Dokumentation:
+        Die Klassengrenzen wurden nach den typischen Feuerintensitäten gemäss ArcGIS Fire
+        Radiative Power Erklärung eingefärbt:
         https://experience.arcgis.com/experience/a0dcc4b8e8ab49b58a520f5acb983345/page/FIRE
 
         Parameter
@@ -17,7 +17,7 @@ def classify_fire_intensity(frp):
 
         Returns
         -------
-        str
+        str : string
             Eine kategorische Intensitätsklasse:
             - "sehr niedrig (<10 MW)"
             - "niedrig (10-99 MW)"
