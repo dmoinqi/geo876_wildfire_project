@@ -1,7 +1,7 @@
 # Globale Wildfire-Analyse
 
 ## Projektbeschreibung
-Das Projekt analysiert globale Wildfires anhand satellitenbasierter Daten des NASA FIRMS Systems. Der Fokus liegt auf der Untersuchung der räumlichen Verteilung und der Intensität von Wildfires innerhalb eines kurzen Zeitraums (letzte 24 Stunden). Der Datensatz liegt im `.csv`-Format vor (abgerufen am 19.05.2026) und enthält georeferenzierte Punktdaten, wobei jede Zeile ein detektiertes Wildfire repräsentiert. Wichtige Variablen wie die geografische Lage (Latitude/Longitude), die Detektionssicherheit (confidence) sowie die Feuerintensität (Fire Radiative Power, FRP) werden genutzt, um die Verteilung und Eigenschaften der Brände zu analysieren.
+Das Projekt analysiert globale Wildfires anhand satellitenbasierter Daten des NASA FIRMS Systems. Der Fokus liegt auf der Untersuchung der räumlichen Verteilung, der Intensität und Detektionssicherheit von Wildfires innerhalb eines kurzen Zeitraums (letzte 24 Stunden). Der Datensatz liegt im `.csv`-Format vor (abgerufen am 19.05.2026) und enthält georeferenzierte Punktdaten, wobei jede Zeile ein detektiertes Wildfire repräsentiert. Wichtige Variablen wie die geografische Lage (Latitude/Longitude), die Detektionssicherheit (confidence) sowie die Feuerintensität (Fire Radiative Power, FRP) werden genutzt, um die Verteilung und Eigenschaften der Brände zu analysieren.
 
 ## Zielsetzung
 Das Ziel dieses Projekts ist es, eine automatisierte Pipeline zu entwickeln, die Wildfires verarbeitet, relevante Informationen herausfiltert, eine gezielte Analyse ermöglicht und die Ergebnisse übersichtlich auf einer interaktiven Karte visualisiert.
@@ -31,6 +31,7 @@ Die Projektstruktur gestaltet sich wie folgt:
     - **raw/** – Rohdaten (Originaldatensatz von NASA FIRMS)
 
   - **notebooks/**
+    - **wildfire_mapping.html** – `.html` Ausdruck der ausgeführten Jupyter Notebooks 
     - **wildfire_mapping.ipynb** – zentrales Jupyter Notebook für Analyse und Visualisierung
 
   - **outputs/**
